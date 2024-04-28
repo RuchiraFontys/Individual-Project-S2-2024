@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <span class="phone">+31 090 126 5898</span>
+            <span class="email">info@rumed.nl</span>
+        </div>
+        <div class="social-icons">
+            <a href="" class="facebook-icon"><img src="~/images/facebookicon.png" alt="Facebook"></a>
+            <a href="" class="twitter-icon"><img src="~/images/twittericon.png" alt="Twitter"></a>
+        </div>
+    </div>
+
+            @RenderBody()
+
+    <!--6nd part-->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="~/images/RuMED.png" alt="RuMED Logo">
+        </div>
+        <div class="footer-links-container">
+            <div class="footer-column">
+                <h4>Doctors</h4>
+                <p>hello</p>
+            </div>
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>hello</p>
+                <p>hello</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>info@rumed.nl</p>
+                <p>+31 090 126 5898</p>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>Copyright © 2024 — RuMED. All rights reserved.</p>
+    </div>
+
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: false)
+    }
+
+</body>
+</html>

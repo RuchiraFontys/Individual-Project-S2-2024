@@ -1,0 +1,88 @@
+﻿@page
+@model WebApp.Pages.PatientProfileModel
+@{
+    Layout = "_Layout";
+}
+
+<header class="header">
+    <div class="logo-container">
+        <img src="~/images/RuMED.png" alt="RuMED Logo" class="logo">
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li class="login-button"><a asp-page="/PatientProfile">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="profile-section">
+    <div class="profile-card">
+        <div class="profile-picture"></div>
+        <p>SSN</p>
+        <p>Full Name</p>
+        <p>Phone Number</p>
+        <button class="edit-profile-btn">Edit Profile</button>
+    </div>
+    <div class="patient-details-container">
+        <div class="patient-details">
+        <div class="detail"><span class="label">First Name:</span> <span class="value">John</span></div>
+        <div class="detail"><span class="label">Last Name:</span> <span class="value">Doe</span></div>
+        <div class="detail"><span class="label">Date Of Birthday:</span> <span class="value">01/01/1990</span></div>
+        <div class="detail"><span class="label">Gender:</span> <span class="value">Male</span></div>
+        <div class="detail"><span class="label">Phone Number:</span> <span class="value">+31 333 3333 333</span></div>
+        <div class="detail"><span class="label">SSN:</span> <span class="value">DIPC98CO14</span></div>
+        <div class="detail"><span class="label">Email Address:</span> <span class="value">RUCHIRA@GMAIL.COM</span></div>
+        <div class="detail"><span class="label">Home Address:</span> <span class="value">VIA AMSTERDAM 19, EINDHOVEN</span></div>
+        <div class="detail"><span class="label">Post Code:</span> <span class="value">EI9999</span></div>
+        </div>
+        <div class="password-management">
+            <p>Password: ********</p>
+            <button class="change-password-btn">Change Password</button>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-label emergency-contact-label">Emergency Contact</div>
+    <div class="contact-details">
+       <div class="column">
+            <div class="detail"><span class="label">First Name:</span> <span class="value">Maria</span></div>
+            <div class="detail"><span class="label">Last Name:</span> <span class="value">Rossi</span></div>
+            <div class="detail"><span class="label">Date Of Birthday:</span> <span class="value">13/06/1970</span></div>
+            <div class="detail"><span class="label">Gender:</span> <span class="value">Female</span></div>
+            <div class="detail"><span class="label">Phone Number:</span> <span class="value">+39 333 4444 555</span></div>
+            <div class="detail"><span class="label">Email Address:</span> <span class="value">maria@gmail.com</span></div>
+       </div>
+       <div class="column">
+            <div class="detail"><span class="label">SSN:</span> <span class="value">PCJF70PF13</span></div>
+            <div class="detail"><span class="label">Relationship:</span> <span class="value">Mother</span></div>
+            <div class="detail"><span class="label">Home Address:</span> <span class="value">Via Italia 232, Sicily IT</span></div>
+            <div class="detail"><span class="label">Post Code:</span> <span class="value">98168</span></div>
+       </div>
+        <button class="edit-contact-btn">Edit</button>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-label parent-contact-label">Parent Contact</div>
+    <div class="contact-details">
+        <div class="column">
+            <div class="detail"><span class="label">First Name:</span> <span class="value">Maria</span></div>
+            <div class="detail"><span class="label">Last Name:</span> <span class="value">Rossi</span></div>
+            <div class="detail"><span class="label">Date Of Birthday:</span> <span class="value">13/06/1970</span></div>
+            <div class="detail"><span class="label">Gender:</span> <span class="value">Female</span></div>
+            <div class="detail"><span class="label">Phone Number:</span> <span class="value">+39 333 4444 555</span></div>
+            <div class="detail"><span class="label">Email Address:</span> <span class="value">maria@gmail.com</span></div>
+        </div>
+        <div class="column">
+            <div class="detail"><span class="label">SSN:</span> <span class="value">PCJF70PF13</span></div>
+            <div class="detail"><span class="label">Relationship:</span> <span class="value">Mother</span></div>
+            <div class="detail"><span class="label">Home Address:</span> <span class="value">Via Italia 232, Sicily IT</span></div>
+            <div class="detail"><span class="label">Post Code:</span> <span class="value">98168</span></div>
+        </div>
+        <button class="edit-contact-btn">Edit</button>
+    </div>
+</section>

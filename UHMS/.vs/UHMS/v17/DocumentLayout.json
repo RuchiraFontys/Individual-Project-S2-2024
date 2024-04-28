@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|c:\\users\\univ\\onedrive\\desktop\\individual-project-s2-2024-dev\\individual-project-s2-2024-dev\\uhms\\webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|solutionrelative:webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|c:\\users\\univ\\onedrive\\desktop\\individual-project-s2-2024-dev\\individual-project-s2-2024-dev\\uhms\\webapp\\pages\\registration.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|solutionrelative:webapp\\pages\\registration.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\webapp\\pages\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|solutionrelative:webapp\\pages\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\webapp\\viewmodels\\registrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE408D32-9CF9-4051-8708-45C1AC14ADC6}|WebApp\\WebApp.csproj|solutionrelative:webapp\\viewmodels\\registrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88B678F6-4232-4F6D-8678-87A2546DD00F}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\dataaccesslayer\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B678F6-4232-4F6D-8678-87A2546DD00F}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C1348F3-B8F1-45E2-A622-6112A390EA58}|DesktopApp\\DesktopApp.csproj|C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\desktopapp\\desktopapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5C1348F3-B8F1-45E2-A622-6112A390EA58}|DesktopApp\\DesktopApp.csproj|solutionrelative:desktopapp\\desktopapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T12:48:46.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Registration.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Registration.cshtml.cs",
+              "RelativeDocumentMoniker": "WebApp\\Pages\\Registration.cshtml.cs",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Registration.cshtml.cs",
+              "RelativeToolTip": "WebApp\\Pages\\Registration.cshtml.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAgwDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T19:24:46.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegistrationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\ViewModels\\RegistrationViewModel.cs",
+              "RelativeDocumentMoniker": "WebApp\\ViewModels\\RegistrationViewModel.cs",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\ViewModels\\RegistrationViewModel.cs",
+              "RelativeToolTip": "WebApp\\ViewModels\\RegistrationViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T12:54:25.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Registration.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Pages\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\WebApp\\Pages\\Registration.cshtml",
+              "RelativeToolTip": "WebApp\\Pages\\Registration.cshtml",
+              "ViewState": "AQIAAAYAAAAAzszMzMwHwBEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-15T12:46:51.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DesktopApp",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\DesktopApp\\DesktopApp.csproj",
+              "RelativeDocumentMoniker": "DesktopApp\\DesktopApp.csproj",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\DesktopApp\\DesktopApp.csproj",
+              "RelativeToolTip": "DesktopApp\\DesktopApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-15T12:46:40.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBHelper.cs",
+              "DocumentMoniker": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\DataAccessLayer\\DBHelper.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DBHelper.cs",
+              "ToolTip": "C:\\Users\\UNIV\\OneDrive\\Desktop\\individual-project-s2-2024-Dev\\individual-project-s2-2024-Dev\\UHMS\\DataAccessLayer\\DBHelper.cs",
+              "RelativeToolTip": "DataAccessLayer\\DBHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAACgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T12:45:38.743Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

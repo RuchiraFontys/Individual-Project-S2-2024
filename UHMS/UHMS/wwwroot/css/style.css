@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* This is a placeholder. Set your own font family. */
+    margin: 0;
+    padding: 0;
+}
+
+/*1st part*/
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #0044cc; /* This is a placeholder color. Set the blue color you desire. */
+    color: #ffffff;
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+/* Add custom styles for your facebook and twitter icons */
+/* These are placeholders, use actual icons or images */
+.facebook-icon:before {
+    content: 'FB'; /* Use font icon or image instead */
+}
+
+.twitter-icon:before {
+    content: 'TW'; /* Use font icon or image instead */
+}
+
+/*2nd part*/
+/* Header and Logo Styles */
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+        .main-nav ul li {
+            width: 100%;
+            text-align: center;
+        }
+
+            .main-nav ul li.login-button a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+}
+
+/* Style adjustments for small screens */
+@media (max-width: 480px) {
+    .main-nav ul li a {
+        padding: 10px 5px;
+    }
+
+    .main-nav ul li.login-button a {
+        padding: 10px 5px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Adjust the color as needed */
+}
+
+.logo-container .logo {
+    height: 80px; /* Adjust the size as needed */
+}
+
+/* Main Navigation Styles */
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .main-nav ul li {
+        margin-left: 20px; /* Space between menu items */
+    }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #333333; /* Menu item text color */
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+            .main-nav ul li a:hover {
+                color: #0066ff; /* Menu item hover color */
+            }
+
+        /* Specific styles for the login button */
+        .main-nav ul li.login-button {
+            margin-left: 20px; /* Space between the previous menu item and the button */
+            padding: 0;
+        }
+
+            .main-nav ul li.login-button a {
+                background-color: #007bff; /* Adjust the button color as needed */
+                border-radius: 5px; /* Rounded corners */
+                color: white; /* Text color */
+                padding: 10px 20px; /* Button padding */
+                transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            }
+
+                .main-nav ul li.login-button a:hover {
+                    background-color: #0056b3; /* Darker shade for hover effect */
+                    text-decoration: none; /* No underline on hover */
+                }
+
+/*3rd part*/
+/* Hero Section Styles */
+.hero {
+    background: url('homepageimage.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0; /* Adjust the padding as needed */
+    position: relative;
+    color: white; /* Assuming white text over a darker image */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-container {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    padding: 20px; /* Adjust the padding as needed */
+}
+
+.hero h1 {
+    font-size: 2.5em; /* Adjust size as needed */
+    margin: 0; /* Remove the margin to avoid extra space */
+}
+
+.btn {
+    display: block; /* Make the button a block to fill the container */
+    margin: 20px auto 0; /* Adds margin to the top and auto centers the button */
+    padding: 10px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.registration-button {
+    margin-top: 20px; /* Space between the text and the button */
+    display: inline-block; /* This will allow you to set a width or just fit the content */
+}
+
+.btn-primary {
+    width: 100px; /* Change this to any fixed value like 200px if needed */
+    padding: 15px 25px; /* Adjust the padding to increase or decrease button size */
+    background-color: #007bff; /* Adjust button color as needed */
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+
+/* Make hero responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px; /* Reduced padding on smaller screens */
+    }
+
+        .hero h1 {
+            font-size: 2em;
+        }
+
+    .text-container {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em; /* Smaller font size for very small screens */
+    }
+
+    .text-container {
+        padding: 10px;
+    }
+}
+
+/*4th part*/
+/* Services Section Styles */
+.services {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Align children so they are the same height */
+    margin: 0;
+    overflow: hidden; /* Ensures no space around the edges */
+}
+
+.service-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Equal width */
+    color: white; /* Text color */
+}
+
+.service-header {
+    padding: 20px;
+    background-color: #ddd;
+    margin: 0; /* Ensures no additional space is added from default browser styles */
+    color: white; /* Text color for header */
+}
+
+#emergency .service-header {
+    background-color: rgba(255, 102, 102, 0.8); /* Adjusted for a translucent look */
+}
+
+#medical-history .service-header {
+    background-color: rgba(102, 204, 102, 0.8); /* Adjusted for a translucent look */
+}
+
+#appointment .service-header {
+    background-color: rgba(102, 153, 255, 0.8); /* Adjusted for a translucent look */
+}
+
+.service-body {
+    flex-grow: 1; /* Fills the height of the container */
+    padding: 20px;
+    background-color: #f0f0f0; /* Neutral color for content background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps title at top, button at bottom */
+}
+
+#emergency .service-body {
+    background: #cc3333; /* Slightly darker red */
+}
+
+#medical-history .service-body {
+    background: #33aa33; /* Slightly darker green */
+}
+
+#appointment .service-body {
+    background: #3366cc; /* Slightly darker blue */
+}
+
+.service-button {
+    padding: 10px 20px;
+    background-color: #333; /* Default button color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    align-self: center; /* Center button in the service-body */
+    margin-top: auto; /* Aligns button at the bottom */
+    width: auto; /* Auto width based on content */
+    max-width: 200px; /* Max width for the button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+    /* Hover effect for buttons */
+    .service-button:hover {
+        background-color: #555; /* Darken button on hover */
+        transform: translateY(-5px); /* Raise button slightly on hover */
+    }
+
+
+/* Responsive design adjustments if necessary */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column; /* Stack the service columns on smaller screens */
+    }
+
+    .service-column {
+        margin-bottom: 20px; /* Add some space between the stacked columns */
+    }
+}
+
+
+    /*5th part*/
+/* Info Section Styles */
+.info-section {
+    position: relative;
+    background: url('informationimage.jpg') no-repeat center 30%; /* The percentage moves the image down from the top */
+    background-size: cover;
+    height: 300px; /* or whatever height you desire */
+}
+
+.info-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 128, 0, 0.6); /* Green semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+    .info-overlay h2 {
+        margin: 0 0 10px 0; /* Add space below the heading */
+        font-size: 1.5em; /* Adjust size as needed */
+    }
+
+    .info-overlay p {
+        margin: 0 0 10px 0; /* Add space below each paragraph */
+        font-size: 1em; /* Adjust size as needed */
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .info-section {
+        height: 300px; /* Adjust height for smaller screens if necessary */
+    }
+}
+
+    /*6th part*/
+
+.footer {
+    background-color: #333; /* Example background color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    max-width: 100px; /* Adjust the size as needed */
+}
+
+.footer-links-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px; /* Minimum width of columns */
+}
+
+    .footer-column h4 {
+        margin-bottom: 10px;
+    }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo,
+    .footer-links-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column {
+        margin-bottom: 10px;
+    }
+
+}
+.copyright {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #292b2c; /* Or any other color */
+    color: white;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    width: 100%; /* Ensures full width */
+}
+
+@media (max-width: 768px) {
+    .copyright {
+        padding: 10px 0;
+    }
+}

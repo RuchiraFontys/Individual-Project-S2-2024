@@ -1,0 +1,45 @@
+﻿@page
+@model WebApp.Pages.PatientDashboardModel
+@{
+    Layout = "_Layout";
+}
+
+<header class="header">
+    <div class="logo-container">
+        <img src="~/images/RuMED.png" alt="RuMED Logo" class="logo">
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li class="login-button"><a asp-page="/PatientProfile">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="dashboard-header">
+    <div class="dashboard-overlay">
+        <h1>DASHBOARD</h1>
+    </div>
+</section>
+
+<section class="dashboard-tiles">
+    <a href="link" class="tile tile-medical-history">Medical History</a>
+    <a href="link" class="tile tile-prescribed-medication">Prescribed Medication</a>
+    <a href="link" class="tile tile-surgeries">Surgeries</a>
+    <a href="link" class="tile tile-vaccines">Vaccines</a>
+    <a href="link" class="tile tile-find-doctors">Allergies</a>
+    <a href="link" class="tile tile-schedule-appointment">Schedule Appointment</a>
+    <a href="link" class="tile tile-tips">Tips</a>
+    <a href="https://www.healthsanitas.com/Emergency-Articles" class="tile tile-emergency">Emergency</a>
+</section>
+
+<!--5nd part-->
+<section class="info-section">
+    <div class="info-overlay">
+        <h2>We're determined for your better life.</h2>
+        <p>You can get the care you need 24/7 - be it online or in person.</p>
+        <p>You will be treated by caring specialist doctors.</p>
+    </div>
+</section>

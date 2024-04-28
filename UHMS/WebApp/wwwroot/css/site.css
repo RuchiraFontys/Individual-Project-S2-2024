@@ -1,0 +1,911 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+/*1st part*/
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #0044cc; 
+    color: #ffffff;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 15px;
+}
+
+.social-icons img {
+    height: 24px; 
+    width: 24px; 
+}
+
+.facebook-icon img {
+    height: 24px;
+    width: auto;
+}
+
+.twitter-icon img {
+    height: 24px;
+    width: auto;
+}
+
+/*2nd part*/
+/* Header and Logo Styles */
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+        .main-nav ul li {
+            width: 100%;
+            text-align: center;
+        }
+
+            .main-nav ul li.login-button a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+}
+
+/* Style adjustments for small screens */
+@media (max-width: 480px) {
+    .main-nav ul li a {
+        padding: 10px 5px;
+    }
+
+    .main-nav ul li.login-button a {
+        padding: 10px 5px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; 
+}
+
+.logo-container .logo {
+    height: 80px; 
+}
+
+/* Main Navigation Styles */
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .main-nav ul li {
+        margin-left: 20px; 
+    }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #333333; /* Menu item text color */
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+            .main-nav ul li a:hover {
+                color: #0066ff; /* Menu item hover color */
+            }
+
+        /* Login button */
+        .main-nav ul li.login-button {
+            margin-left: 20px; /* Space between the previous menu item and the button */
+            padding: 0;
+        }
+
+            .main-nav ul li.login-button a {
+                background-color: #007bff;
+                border-radius: 5px; /* Rounded corners */
+                color: white; /* Text color */
+                padding: 10px 20px; /* Button padding */
+                transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            }
+
+                .main-nav ul li.login-button a:hover {
+                    background-color: #0056b3; /* Darker shade for hover effect */
+                    text-decoration: none; /* No underline on hover */
+                }
+
+/*3rd part*/
+/* Hero Section Styles */
+.hero {
+    background: url('../images/homepageimage.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0; /* Adjust the padding as needed */
+    position: relative;
+    color: white; /* Assuming white text over a darker image */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-container {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    padding: 20px; 
+}
+
+.hero h1 {
+    font-size: 2.5em; 
+    margin: 0; /* Remove the margin to avoid extra space */
+}
+
+.btn {
+    display: block; /* Make the button a block to fill the container */
+    margin: 20px auto 0; /* Adds margin to the top and auto centers the button */
+    padding: 10px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.registration-button {
+    margin-top: 20px; /* Space between the text and the button */
+    display: inline-block; /* allow to set a width or just fit the content */
+}
+
+.btn-primary {
+    width: 100px; 
+    padding: 15px 25px; /* Adjust the padding to increase or decrease button size */
+    background-color: #007bff; /* Adjust button color as needed */
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+
+    /*Registration page Required red message*/
+
+.text-danger {
+    color: red;
+}
+
+input.input-validation-error,
+select.input-validation-error,
+textarea.input-validation-error {
+    border: 1px solid red;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.required-star:after {
+    content: " *";
+    color: red;
+}
+
+/*End Registration page Required red message*/
+
+/* Make hero responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px; /* Reduced padding on smaller screens */
+    }
+
+        .hero h1 {
+            font-size: 2em;
+        }
+
+    .text-container {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em; /* Smaller font size for very small screens */
+    }
+
+    .text-container {
+        padding: 10px;
+    }
+}
+
+/*4th part*/
+/* Services Section Styles */
+.services {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Align children so they are the same height */
+    margin: 0;
+    overflow: hidden; /* Ensures no space around the edges */
+}
+
+.service-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Equal width */
+    color: white; /* Text color */
+}
+
+.service-header {
+    padding: 20px;
+    background-color: #ddd;
+    margin: 0; /* Ensures no additional space is added from default browser styles */
+    color: white; /* Text color for header */
+}
+
+#emergency .service-header {
+    background-color: rgba(255, 102, 102, 0.8); 
+}
+
+#medical-history .service-header {
+    background-color: rgba(102, 204, 102, 0.8); 
+}
+
+#appointment .service-header {
+    background-color: rgba(102, 153, 255, 0.8);
+}
+
+.service-body {
+    flex-grow: 1; /* Fills the height of the container */
+    padding: 20px;
+    background-color: #f0f0f0; /* Neutral color for content background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps title at top, button at bottom */
+}
+
+#emergency .service-body {
+    background: #cc3333; /* Slightly darker red */
+}
+
+#medical-history .service-body {
+    background: #33aa33; /* Slightly darker green */
+}
+
+#appointment .service-body {
+    background: #3366cc; /* Slightly darker blue */
+}
+
+.service-button {
+    padding: 10px 20px;
+    background-color: #333; /* Default button color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    align-self: center; /* Center button in the service-body */
+    margin-top: auto; /* Aligns button at the bottom */
+    width: auto; /* Auto width based on content */
+    max-width: 200px; /* Max width for the button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+    /* Hover effect for buttons */
+    .service-button:hover {
+        background-color: #555; /* Darken button on hover */
+        transform: translateY(-5px); /* Raise button slightly on hover */
+    }
+
+
+/* Responsive design adjustments if necessary */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column; /* Stack the service columns on smaller screens */
+    }
+
+    .service-column {
+        margin-bottom: 20px; /* Add some space between the stacked columns */
+    }
+}
+
+
+/*5th part*/
+/* Info Section Styles */
+.info-section {
+    position: relative;
+    background: url('../images/informationimage.jpg') no-repeat center 30%; /* The percentage moves the image down from the top */
+    background-size: cover;
+    height: 300px; 
+}
+
+.info-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 128, 0, 0.6); /* Green semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+    .info-overlay h2 {
+        margin: 0 0 10px 0; /* Add space below the heading */
+        font-size: 1.5em; 
+    }
+
+    .info-overlay p {
+        margin: 0 0 10px 0; /* Add space below each paragraph */
+        font-size: 1em; 
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .info-section {
+        height: 300px; /* Adjust height for smaller screens if necessary */
+    }
+}
+
+/*6th part*/
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    max-width: 100px;
+}
+
+.footer-links-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px; /* Minimum width of columns */
+}
+
+    .footer-column h4 {
+        margin-bottom: 10px;
+    }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo,
+    .footer-links-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column {
+        margin-bottom: 10px;
+    }
+}
+
+.copyright {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #292b2c;
+    color: white;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    width: 100%; /* full width */
+}
+
+@media (max-width: 768px) {
+    .copyright {
+        padding: 10px 0;
+    }
+}
+
+/*Login Page*/
+
+.login-bar {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 50px; 
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.login-info {
+    flex-basis: 50%; 
+    background-color: #007bff; /* blue placeholder in login page */
+    color: white;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+    .login-info h2 {
+        margin-top: 0;
+    }
+
+    .login-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .login-info ul li {
+            margin-bottom: 10px;
+        }
+
+.login-form {
+    flex-basis: 50%; 
+    min-height: 400px;
+    background-color: #ffffff; 
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+    .login-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-form h2 {
+        color: #333;
+    }
+
+    .login-form label {
+        margin-top: 10px;
+    }
+
+    .login-form input {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px; 
+    }
+
+    .login-form button {
+        margin-top: 20px;
+        padding: 10px 15px;
+        background-color: #007bff; 
+        color: white;
+        border: none;
+        border-radius: 4px; 
+        cursor: pointer;
+    }
+
+        .login-form button:hover {
+            background-color: #0056b3; /*dark blue for hover*/
+        }
+
+/*End Login Page*/
+
+/*Registration*/
+
+.registration-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+}
+
+    .registration-container label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .registration-container input,
+    .registration-container select,
+    .registration-container button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    .registration-container button {
+        background-color: #007bff;
+        color: white;
+        margin-top: 20px;
+        border: none;
+        font-weight: bold;
+    }
+
+    .registration-container button:hover {
+            background-color: #0056b3;
+     }
+
+/*End Registration Page*/
+
+
+/*Patient Dashboard*/
+
+/*Dashboard Image Section*/
+
+.dashboard-header {
+    background-image: url('../images/informationimage.jpg');
+    background-size: cover;
+    background-position: center 20%; /* Image vertical percentage */
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 400px; /* Image hight value */
+    overflow: hidden; /* Image remains in the container */
+}
+
+.dashboard-header .dashboard-bg-image 
+    {
+        width: 100%;
+        display: block;
+        object-fit: cover; /* Image cover without stretching */
+    }
+
+.dashboard-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    display: flex;
+    align-items: center; /* Aligns text vertically */
+    justify-content: center; /* Aligns text horizontally */
+}
+
+.dashboard-header h1 {
+    font-size: 3rem; /* Dashboard title */
+    font-weight: bold; /* Text bold */
+    margin: 0; /* Removes default margin */
+}
+
+/*End Dashboard image section*/
+
+    /*Patient Dashboard Tiles*/
+
+        .dashboard-tiles {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .tile {
+            text-decoration: none; /* Removes underline from links */
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+            /* Specific colors for each tile */
+            .tile-medical-history {
+                background-color: #f84899;
+            }
+
+            .tile-prescribed-medication {
+                background-color: #8930c3;
+            }
+
+            .tile-surgeries {
+                background-color: #5a33b2;
+            }
+
+            .tile-vaccines {
+                background-color: #617af1;
+            }
+
+            .tile-find-doctors {
+                background-color: #2f5a69;
+            }
+
+            .tile-schedule-appointment {
+                background-color: #ffd36e;
+            }
+
+            .tile-tips {
+                background-color: #2eddaf;
+            }
+
+            .tile-emergency {
+                background-color: #f04c4c;
+            }
+
+            /* Hover effect */
+            .tile:hover {
+                filter: brightness(90%);
+            }
+
+            /* Rresponsive design */
+            @media (max-width: 768px) {
+                .dashboard-tiles {
+                    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .dashboard-tiles {
+                    grid-template-columns: 1fr; /* One column on very small screens */
+                }
+            }
+
+     /*End Patient Dashboard Tiles*/
+
+/*End Patient Dashboard*/
+
+/*Patient Profile*/
+
+/*3 Blocks with Profile picture - Patient information - change password*/
+
+.profile-section {
+    display: flex;
+    flex-wrap: wrap; /* This will allow elements to wrap on smaller screens */
+    align-items: stretch; /* This will make all child elements of .profile-section the same height */
+    gap: 20px;
+    padding: 30px;
+    background-color: #e6f7ff;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px; /* Padding added to all sides except top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.profile-picture {
+    background-color: #ff6347;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 20px; /* Space added above the profile picture */
+    margin-bottom: 20px;
+}
+
+.edit-profile-btn {
+    background-color: #f72585;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto; /* Pushes the button to the bottom */
+    transition: background-color 0.3s;
+}
+
+.patient-details-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: calc(75% - 20px);
+}
+
+.patient-details {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+}
+
+.detail {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+    .detail .label {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .detail .value {
+        text-align: left;
+        flex-grow: 1;
+    }
+
+.password-management {
+    display: flex;
+    align-items: center; /* Centers items vertically, use flex-start to align them at the top */
+    justify-content: space-between; /* This separates the text and the button */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .password-management p {
+        margin: 0; /* Removes any default margin */
+        flex-grow: 1; /* Allows the paragraph to take up the available space */
+    }
+
+.change-password-btn {
+    background-color: #f72585;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px; /* Space above the button */
+    margin-left: 20px;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+}
+
+    .edit-profile-btn:hover,
+    .change-password-btn:hover {
+        background-color: hsl(320, 100%, 35%); /* Adjust the lightness value to make it darker */
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-section {
+        padding: 15px; /* Reduced padding for the section */
+    }
+
+    .profile-card,
+    .patient-details-container,
+    .password-management {
+        width: 100%; /* Ensures the width is full but within the container */
+        box-sizing: border-box; /* Ensures padding is included in the width calculation */
+        margin-bottom: 15px; /* Adjusted margin for spacing */
+        padding: 15px; /* Adjust padding to be smaller on smaller screens */
+    }
+
+    .change-password-btn {
+        margin-top: 10px; /* Ensure consistent margin above the button */
+        width: 100%; /* Optional: make the button full width */
+        box-sizing: border-box; /* Ensures padding is included in the width */
+    }
+}
+
+/*End 3 Blocks with Profile picture - Patient information - change password*/
+
+/*Emergency and Parent Contact section*/
+/* Shared styles for any contact section (Emergency and Parent Contact) */
+.contact-section {
+    background-color: #e6f7ff; /* Light blue background */
+    padding: 30px; /* Padding around the content */
+    position: relative; /* For positioning of the label */
+}
+
+/* Shared styles for labels */
+.contact-label {
+    color: white; /* White text on the label */
+    padding: 5px 30px; /* Padding inside the label */
+    position: absolute; /* Absolute position relative to the section */
+    top: 2px; /* Slightly down from the top edge of the section */
+    left: 30px; /* Distance from the left edge of the section */
+    font-weight: bold; /* Make label text bold */
+    z-index: 10; /* Ensure the label is above other content */
+}
+
+/* Specific background colors for each label */
+.emergency-contact-label {
+    background-color: #9c1b1b;
+}
+
+.parent-contact-label {
+    background-color: #073b4c;
+}
+
+/* Shared styles for the contact detail boxes */
+.contact-details {
+    background-color: #fff; /* White background for the detail box */
+    border: 1px solid #ccc; /* Border around the detail box */
+    padding: 20px; /* Padding inside the detail box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom only */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between columns */
+}
+
+/* Shared styles for detail labels and values */
+.detail {
+    display: flex;
+    justify-content: flex-start; /* Align to the start of the flex container */
+    margin-bottom: 10px; /* Space between each detail */
+}
+
+.column {
+    flex: 1; /* Each column takes up an equal amount of space */
+    min-width: 250px; /* Minimum width of a column to prevent squashing */
+}
+
+.detail .label {
+    font-weight: bold; /* Bold text for labels */
+    margin-right: 5px; /* Space between label and value */
+    color: #555; /* Dark grey color for the text */
+}
+
+.detail .value {
+    text-align: left; /* Align the text to the left */
+    flex-grow: 1; /* Allow the value to take up remaining space */
+}
+
+/* Shared styles for edit buttons */
+.edit-contact-btn {
+    background-color: #f72585; /* Bright pink color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 30px; /* Padding for a wider button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor indicates a clickable item */
+    margin-top: auto; /* Push the button to the bottom of the flex container */
+    align-self: flex-end; /* Align the button to the end of the flex container */
+}
+
+    .edit-contact-btn:hover {
+        background-color: hsl(320, 100%, 35%); /* Darker pink on hover for interaction feedback */
+    }
+
+    /*End Emergency and Parent Contact section*/
+
+    /*End Patient Profile*/

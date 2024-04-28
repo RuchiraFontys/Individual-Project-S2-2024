@@ -1,0 +1,165 @@
+﻿@page
+@model WebApp.Pages.RegistrationModel
+@{
+    Layout = "_Layout";
+}
+
+<header class="header">
+    <div class="logo-container">
+        <img src="~/images/RuMED.png" alt="RuMED Logo" class="logo">
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li class="login-button"><a asp-page="/Registration">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="login-bar">
+    Registration
+</div>
+
+<div class="registration-container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h2>Register</h2>
+
+        <div class="form-group">
+            <label asp-for="Input.FirstName">First Name</label>
+            <input asp-for="Input.FirstName" class="form-control" required>
+            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.LastName">Last Name</label>
+            <input asp-for="Input.LastName" class="form-control" required>
+            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.DateOfBirth">Date of Birth</label>
+            <input asp-for="Input.DateOfBirth" class="form-control" type="date" required />
+            <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.Gender">Gender</label>
+            <select asp-for="Input.Gender" class="form-control" required>
+                <option value="">Select...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="Input.Gender" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.TelephoneNumber">Telephone Number</label>
+            <input asp-for="Input.TelephoneNumber" class="form-control" type="tel" pattern="\+[0-9]{11,14}" title="Include country code and omit any dashes. e.g., +12345678901" required>
+            <span asp-validation-for="Input.TelephoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.SSN" class="required-star">SSN</label>
+            <input asp-for="Input.SSN" class="form-control" pattern="[0-9]{9}" title="9 digits only" required>
+            <span asp-validation-for="Input.SSN" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.EmailAddress">Email Address</label>
+            <input asp-for="Input.EmailAddress" class="form-control" type="email" required>
+            <span asp-validation-for="Input.EmailAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.HomeAddress">Home Address</label>
+            <input asp-for="Input.HomeAddress" class="form-control" required>
+            <span asp-validation-for="Input.HomeAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.Role">Role</label>
+            <select asp-for="Input.Role" class="form-control" required>
+                <option value="">Select...</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Patient">Patient</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+            <span asp-validation-for="Input.Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-group" id="jobIdDiv" style="display:none;">
+            <label>Job ID</label>
+            <input type="text" class="form-control" id="jobId" name="jobId">
+        </div>
+
+        <div id="specializationDiv" class="form-group" style="display: none;">
+            <label for="specialization">Specialization</label>
+            <select id="specialization" name="specialization" class="form-control" required>
+                <option value="">Select a specialization...</option>
+                <option value="Dentist">Dentist</option>
+                <option value="EyeDoctor">Eye Doctor</option>
+                <option value="GeneralPractitioner">General Practitioner</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Oncologist">Oncologist</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.Password">Password</label>
+            <input asp-for="Input.Password" class="form-control" type="password" required>
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<script>
+    function handleRoleChange() {
+        var roleSelect = document.getElementById("Input_Role");
+        var role = roleSelect.value;
+        var jobIdDiv = document.getElementById("jobIdDiv");
+        var jobIdInput = document.getElementById("jobId");
+        var specializationDiv = document.getElementById("specializationDiv");
+
+        // Reset display states
+        jobIdDiv.style.display = 'none';
+        specializationDiv.style.display = 'none';
+        jobIdInput.removeAttribute('name');
+        jobIdInput.removeAttribute('required');
+
+        // Only display job ID and specialization fields for Doctor role
+        if (role === 'Doctor') {
+            jobIdDiv.style.display = 'block';
+            specializationDiv.style.display = 'block'; // Show the specialization select only for Doctors
+            jobIdInput.setAttribute('name', 'doctorJobId');
+            jobIdInput.setAttribute('required', '');
+        }
+        // Only display job ID field for Administrator role
+        else if (role === 'Administrator') {
+            jobIdDiv.style.display = 'block';
+            jobIdInput.setAttribute('name', 'administratorJobId');
+            jobIdInput.setAttribute('required', '');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var roleSelect = document.getElementById("Input_Role");
+        roleSelect.addEventListener('change', handleRoleChange);
+        handleRoleChange(); // To ensure correct display on page load if there's a selected value
+    }, false);
+
+    function validateForm() {
+        // Client-side form validation logic, if necessary beyond HTML5 and _ValidationScriptsPartial
+        return true; // Placeholder for actual validation logic
+    }
+</script>
