@@ -1,0 +1,497 @@
+USE [master]
+GO
+/****** Object:  Database [dbi536154_uhms]    Script Date: 28/04/2024 22:56:11 ******/
+CREATE DATABASE [dbi536154_uhms]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'dbi536154_uhms', FILENAME = N'D:\SQL\Data\dbi536154_uhms.mdf' , SIZE = 8192KB , MAXSIZE = 1048576KB , FILEGROWTH = 2048KB )
+ LOG ON 
+( NAME = N'dbi536154_uhms_log', FILENAME = N'D:\SQL\Log\dbi536154_uhms_log.ldf' , SIZE = 8192KB , MAXSIZE = 262144KB , FILEGROWTH = 10%)
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [dbi536154_uhms] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [dbi536154_uhms].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [dbi536154_uhms] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [dbi536154_uhms] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [dbi536154_uhms] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [dbi536154_uhms] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [dbi536154_uhms] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [dbi536154_uhms] SET  MULTI_USER 
+GO
+ALTER DATABASE [dbi536154_uhms] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [dbi536154_uhms] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [dbi536154_uhms] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [dbi536154_uhms] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [dbi536154_uhms] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [dbi536154_uhms] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'dbi536154_uhms', N'ON'
+GO
+ALTER DATABASE [dbi536154_uhms] SET QUERY_STORE = OFF
+GO
+USE [dbi536154_uhms]
+GO
+/****** Object:  Table [dbo].[Administrators]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Administrators](
+	[UserId] [int] NOT NULL,
+	[AdministratorJobId] [varchar](255) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__Administ__ECE410B978345F53] UNIQUE NONCLUSTERED 
+(
+	[AdministratorJobId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Allergies]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Allergies](
+	[AllergyId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AllergyId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Appointments]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Appointments](
+	[AppointmentId] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [date] NOT NULL,
+	[Time] [time](7) NOT NULL,
+	[AppointmentStatusId] [int] NULL,
+	[VisitTypeId] [int] NULL,
+	[DoctorId] [int] NULL,
+	[PatientId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AppointmentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AppointmentStatuses]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AppointmentStatuses](
+	[AppointmentStatusId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AppointmentStatusId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Doctors]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Doctors](
+	[UserId] [int] NOT NULL,
+	[SpecializationId] [int] NULL,
+	[DoctorJobId] [nvarchar](50) NULL,
+	[ClinicCity] [varchar](255) NULL,
+	[ClinicAddress] [varchar](255) NULL,
+	[ClinicPCode] [varchar](255) NULL,
+	[ClinicPhone] [varchar](255) NULL,
+	[ClinicEmail] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[DoctorJobId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Genders]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Genders](
+	[GenderId] [int] IDENTITY(1,1) NOT NULL,
+	[GenderName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[GenderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HealthAlerts]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HealthAlerts](
+	[AlertId] [int] IDENTITY(1,1) NOT NULL,
+	[PatientId] [int] NULL,
+	[Message] [nvarchar](max) NOT NULL,
+	[DateGenerated] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AlertId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MedicalRecords]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MedicalRecords](
+	[RecordId] [int] IDENTITY(1,1) NOT NULL,
+	[DateCreated] [date] NOT NULL,
+	[VisitDate] [date] NULL,
+	[PatientId] [int] NULL,
+	[Symptoms] [nvarchar](max) NULL,
+	[Diagnosis] [nvarchar](max) NULL,
+	[MedicationNote] [nvarchar](max) NULL,
+	[Note] [nvarchar](max) NULL,
+	[VisitTypeId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RecordId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Medications]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Medications](
+	[MedicationId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[CompanyName] [nvarchar](100) NULL,
+	[PossibleSideEffects] [nvarchar](max) NULL,
+	[Contraindications] [nvarchar](max) NULL,
+	[DosageForm] [nvarchar](50) NULL,
+	[Dosage] [nvarchar](50) NULL,
+	[UsedFor] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MedicationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PatientAllergies]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PatientAllergies](
+	[UserId] [int] NOT NULL,
+	[AllergyId] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[AllergyId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PatientMedicalRecords]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PatientMedicalRecords](
+	[RecordId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[MedicalRecordId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RecordId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Patients]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Patients](
+	[UserId] [int] NOT NULL,
+	[ECFirstName] [nvarchar](255) NULL,
+	[ECLastName] [nvarchar](255) NULL,
+	[ECDateOfBirth] [date] NULL,
+	[ECGender] [nvarchar](50) NULL,
+	[ECPhoneNumber] [nvarchar](50) NULL,
+	[ECEmailAddress] [nvarchar](255) NULL,
+	[ECSSN] [nvarchar](50) NULL,
+	[ECRelationship] [nvarchar](100) NULL,
+	[ECHomeAddress] [nvarchar](255) NULL,
+	[ECPostCode] [nvarchar](50) NULL,
+	[PCFirstName] [nvarchar](255) NULL,
+	[PCLastName] [nvarchar](255) NULL,
+	[PCDateOfBirth] [date] NULL,
+	[PCGender] [nvarchar](50) NULL,
+	[PCPhoneNumber] [nvarchar](50) NULL,
+	[PCEmailAddress] [nvarchar](255) NULL,
+	[PCSSN] [nvarchar](50) NULL,
+	[PCRelationship] [nvarchar](100) NULL,
+	[PCHomeAddress] [nvarchar](255) NULL,
+	[PCPostCode] [nvarchar](50) NULL,
+	[SSN] [varchar](11) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[SSN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PrescriptionMedications]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PrescriptionMedications](
+	[PrescriptionId] [int] NOT NULL,
+	[MedicationId] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PrescriptionId] ASC,
+	[MedicationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Prescriptions]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Prescriptions](
+	[PrescriptionId] [int] IDENTITY(1,1) NOT NULL,
+	[PrescriptionDate] [date] NOT NULL,
+	[PatientId] [int] NULL,
+	[Notes] [nvarchar](max) NULL,
+	[ValidUntil] [datetime] NULL,
+	[IssuedPlace] [nvarchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PrescriptionId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Roles]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Roles](
+	[RoleId] [int] IDENTITY(1,1) NOT NULL,
+	[RoleName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Specializations]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Specializations](
+	[SpecializationId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[SpecializationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[DateOfBirth] [date] NOT NULL,
+	[GenderId] [int] NOT NULL,
+	[TelephoneNumber] [nvarchar](20) NOT NULL,
+	[SSN] [nvarchar](11) NOT NULL,
+	[EmailAddress] [nvarchar](255) NOT NULL,
+	[HomeAddress] [nvarchar](255) NOT NULL,
+	[Password] [nvarchar](60) NOT NULL,
+	[RoleId] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__Users__CA1E8E3C4DB3FEB1] UNIQUE NONCLUSTERED 
+(
+	[SSN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Users_Email] UNIQUE NONCLUSTERED 
+(
+	[EmailAddress] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Users_SSN] UNIQUE NONCLUSTERED 
+(
+	[SSN] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VisitTypes]    Script Date: 28/04/2024 22:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VisitTypes](
+	[VisitTypeId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[VisitTypeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[PatientMedicalRecords] ADD  DEFAULT (getdate()) FOR [DateCreated]
+GO
+ALTER TABLE [dbo].[Administrators]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[Appointments]  WITH CHECK ADD FOREIGN KEY([AppointmentStatusId])
+REFERENCES [dbo].[AppointmentStatuses] ([AppointmentStatusId])
+GO
+ALTER TABLE [dbo].[Appointments]  WITH CHECK ADD FOREIGN KEY([DoctorId])
+REFERENCES [dbo].[Doctors] ([UserId])
+GO
+ALTER TABLE [dbo].[Appointments]  WITH CHECK ADD FOREIGN KEY([PatientId])
+REFERENCES [dbo].[Patients] ([UserId])
+GO
+ALTER TABLE [dbo].[Appointments]  WITH CHECK ADD FOREIGN KEY([VisitTypeId])
+REFERENCES [dbo].[VisitTypes] ([VisitTypeId])
+GO
+ALTER TABLE [dbo].[Doctors]  WITH CHECK ADD FOREIGN KEY([SpecializationId])
+REFERENCES [dbo].[Specializations] ([SpecializationId])
+GO
+ALTER TABLE [dbo].[Doctors]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[HealthAlerts]  WITH CHECK ADD FOREIGN KEY([PatientId])
+REFERENCES [dbo].[Patients] ([UserId])
+GO
+ALTER TABLE [dbo].[MedicalRecords]  WITH CHECK ADD FOREIGN KEY([PatientId])
+REFERENCES [dbo].[Patients] ([UserId])
+GO
+ALTER TABLE [dbo].[MedicalRecords]  WITH CHECK ADD  CONSTRAINT [FK_MedicalRecords_VisitTypes] FOREIGN KEY([VisitTypeId])
+REFERENCES [dbo].[VisitTypes] ([VisitTypeId])
+GO
+ALTER TABLE [dbo].[MedicalRecords] CHECK CONSTRAINT [FK_MedicalRecords_VisitTypes]
+GO
+ALTER TABLE [dbo].[PatientAllergies]  WITH CHECK ADD FOREIGN KEY([AllergyId])
+REFERENCES [dbo].[Allergies] ([AllergyId])
+GO
+ALTER TABLE [dbo].[PatientAllergies]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Patients] ([UserId])
+GO
+ALTER TABLE [dbo].[PatientMedicalRecords]  WITH CHECK ADD FOREIGN KEY([MedicalRecordId])
+REFERENCES [dbo].[MedicalRecords] ([RecordId])
+GO
+ALTER TABLE [dbo].[PatientMedicalRecords]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[Patients]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[Patients]  WITH CHECK ADD  CONSTRAINT [FK_Patients_Users] FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Patients] CHECK CONSTRAINT [FK_Patients_Users]
+GO
+ALTER TABLE [dbo].[PrescriptionMedications]  WITH CHECK ADD FOREIGN KEY([MedicationId])
+REFERENCES [dbo].[Medications] ([MedicationId])
+GO
+ALTER TABLE [dbo].[PrescriptionMedications]  WITH CHECK ADD FOREIGN KEY([PrescriptionId])
+REFERENCES [dbo].[Prescriptions] ([PrescriptionId])
+GO
+ALTER TABLE [dbo].[Prescriptions]  WITH CHECK ADD FOREIGN KEY([PatientId])
+REFERENCES [dbo].[Patients] ([UserId])
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD FOREIGN KEY([GenderId])
+REFERENCES [dbo].[Genders] ([GenderId])
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD FOREIGN KEY([RoleId])
+REFERENCES [dbo].[Roles] ([RoleId])
+GO
+USE [master]
+GO
+ALTER DATABASE [dbi536154_uhms] SET  READ_WRITE 
+GO
