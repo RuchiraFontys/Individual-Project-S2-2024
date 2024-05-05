@@ -16,5 +16,10 @@ namespace DesktopApp
         {
             InitializeComponent();
         }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
